@@ -10,9 +10,7 @@ router.get("/", (req, res)=>{
     const { db } = req.app
     const {indexMsg, books} =  db
     console.log(db, 'initial state')
-
-    console.log('YEE' ,process.env)
-    res.send( `${ indexMsg } | you made it` )
+    res.send( `${ indexMsg } | you made it!` )
   
 })
 

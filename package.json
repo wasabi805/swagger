@@ -15,9 +15,11 @@
     "swagger-jsdoc": "^6.1.0",
     "swagger-ui-express": "^4.1.6"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^2.0.14"
+  },
   "scripts": {
-    "start": "node index.js "
+    "dev": "nodemon index.mjs "
   },
   "author": "Tim Ocampo",
   "license": "ISC"
