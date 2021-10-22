@@ -7,11 +7,8 @@ const router = express.Router();
 const idLength = 8;
 
 router.get("/", (req, res)=>{
-    const { db } = req.app
-    const {indexMsg, books} =  db
-    console.log(db, 'initial state')
-    res.send( `${ indexMsg } | you made it!` )
-  
+    
+    res.send( `you made it!` )
 })
 
 //Find book by id
