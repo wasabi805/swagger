@@ -7,7 +7,8 @@ const router = express.Router();
 const idLength = 8;
 
 router.get("/", (req, res)=>{
-    
+    const {db} = req.app;
+    console.log('read db from / :' , db)
     res.send( `you made it!` )
 })
 

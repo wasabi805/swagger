@@ -8,21 +8,16 @@ import swaggerUI from "swagger-ui-express";
 import swaggerJsDoc from 'swagger-jsdoc';
 
 dotenv.config()
-import { db } from './db/db.ts'
-console.log(db)
-// set initial data 
-// db.data =  db.data || { books: [] }
+//import database
+import db from './db/db.ts'
+db.data = {
+    books: [],
+    greeting: 'wu tang forever'
+}
 
-//Database instance
-// const db = {
-//     ...dataBase,
-//     indexMsg: 'You are at the index', 
-// }
 
 //Routes
 import booksRouter from './routes/Books.mjs';
-import { type } from "os";
-
 
 // swagger options
 const options={
@@ -47,16 +42,14 @@ const specs = swaggerJsDoc(options)
 
 // EXPRESS
 const app = express()
+app.db = db
+
 const PORT = process.env.PORT || 4000;
 
 app.use(
     '/api-docs',  //route
     swaggerUI.serve, // run serve as callback
     swaggerUI.setup(specs)) // specify the specs that will build the UI
-
-//do this so we can pass around db later with the router
-// app.db = db
-// console.log(db)
 
 //Middlewares
 app.use(cors());
