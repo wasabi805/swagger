@@ -1,10 +1,12 @@
+import dotenv from "dotenv"
+
 import express from "express";
 import cors from "cors";
 import morgan from "morgan";
 import { Low, JSONFile } from 'lowdb'
 import swaggerUI from "swagger-ui-express";
 import swaggerJsDoc from 'swagger-jsdoc';
-
+dotenv.config()
 //Routes
 import booksRouter from './routes/Books.mjs';
 

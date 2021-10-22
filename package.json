@@ -2,10 +2,10 @@
   "name": "open-api",
   "version": "1.0.0",
   "description": "An open api project",
-  "main": "index.js", 
-
+  "main": "index.js",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
     "esm": "^3.2.25",
     "express": "^4.17.1",
     "lowdb": "^3.0.0",
