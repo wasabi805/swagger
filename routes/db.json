@@ -1,0 +1,22 @@
+{
+    "books":[
+        {
+            "id": "12345",
+            "title" : "Spawn",
+            "author":  "McFarlane",
+            "issue": 1
+        },
+        {
+            "id": "789",
+            "title" : "Batman",
+            "author":  "Lee",
+            "issue": 1
+        },
+        {
+            "id": "3456",
+            "title" : "Avengers",
+            "author":  "Bendis",
+            "issue": 1
+        }
+    ]
+}
