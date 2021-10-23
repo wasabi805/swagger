@@ -15,7 +15,8 @@ const swaggerDocument = YAML.load("./openapi.yml")
 console.log(swaggerDocument)
 
 // EXPRESS
-const app = express()
+const app = express();
+const router = express.Router();
 
 // app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
@@ -34,7 +35,13 @@ app.use(cors());
 app.use(express.json()) //json parser
 app.use(morgan("dev"))
 
+router.get("/", (req, res)=>{
+    res.send('hello')
+})
+
 //ROUTER
+app.use('/', router)
+
 app.use("/books", booksRouter)
 
 app.listen(PORT, ()=>console.log(`App is running on port ${PORT}`))

@@ -1,5 +1,5 @@
 import express from "express";
-import {db} from '../db/db'
+import db from 
 var router = express.Router();
 var idLength = 8;
 

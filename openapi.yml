@@ -1,17 +1,17 @@
-openapi: 3.0.0
+definition:
+  openapi: 3.0.0
+  info:
+    title: Comic Books
+    version: 1.0.0
+    description: SwaggerUi demo project
+    license:
+      name: MIT
 
-definition: myDef -thiskey needs to be here or the app will crash
-
-info:
-  title: Sample API
-  description: Optional multiline or single-line description in [CommonMark](http://commonmark.org/help/) or HTML.
-  version: 1.0.0
-
-servers:
-  - url: http://localhost:4000
-    description: 'Development server'
+  servers:
+    - url: http://localhost:4000
+      description: 'Development server'
     
-apis: ["./routes/*.js"]
+apis: ["/routes/*.js"]
 
 paths:
   /books:
