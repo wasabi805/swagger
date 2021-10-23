@@ -1,4 +1,5 @@
-import express from "express"
+import express, { response } from "express"
+import { arrayBuffer, json } from "stream/consumers";
 import db from "../db/db.js";
 const router = express.Router();
 
@@ -9,7 +10,10 @@ const router = express.Router();
  * components:
  *  schemas: 
  *      Book:
- *          type:
+ *          type: object
+ *          required: 
+ *              -title
+ *              
  *          properties:
  *              id:
  *                  type: string
@@ -31,14 +35,23 @@ const router = express.Router();
  *                  description: name of the story creator
  *                  example: Garth Enis
  */            
+
+/**
+ * @openapi
+ *  /books:
+ *      get:
+ *          description: Welcome to swagger-jsdoc!
+ *          responses:
+ *              200:
+ *                  description: Spawn's Necroplasm -The true source of the costume is the necroplasm in Spawn's body, from which it feeds. It is possible for Spawn to draw this energy back when he needs it, using it to power his abilities without draining his own reserves. 
+ */
+
 router.get("/", (req, res) => {
-    const data = db.data
-    data?.books.push({id: 'you' , name: 'someoneElse'})
-    console.log('newBook Added' , data?.books)
-    res.send( `you made it!` )
+    const {data} = db
+    res.send(data?.books )
 })
 
-router.get("/somewhere", (req, res) => {
+router.get('/somewhere', (req, res) => {
     const data = db.data
     console.log('you can see db persisits at different route' , data?.books)
     res.send( `you made it somewhere else!` )

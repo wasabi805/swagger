@@ -9,8 +9,8 @@ definition:
 
   servers:
     - url: http://localhost:4000
-      description: 'Development server'
-    
+      description: "Development server"
+
 apis: ["./routes/*.js"]
 
 paths:
@@ -19,6 +19,4 @@ paths:
       summary: Returns initial db
       description: This is optional
       responses:
-        '200':
-
-      
+        "200":
