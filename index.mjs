@@ -9,15 +9,11 @@ import swaggerJsDoc from 'swagger-jsdoc';
 
 dotenv.config()
 //import database
-import db from './db/db.ts'
-db.data = {
-    books: [],
-    greeting: 'wu tang forever'
-}
-
+import appReq from './db/db.ts'
+console.log(appReq)
 
 //Routes
-import booksRouter from './routes/Books.mjs';
+import booksRouter from './routes/Books.ts';
 
 // swagger options
 const options={
@@ -42,7 +38,7 @@ const specs = swaggerJsDoc(options)
 
 // EXPRESS
 const app = express()
-app.db = db
+
 
 const PORT = process.env.PORT || 4000;
 
@@ -52,10 +48,12 @@ app.use(
     swaggerUI.setup(specs)) // specify the specs that will build the UI
 
 //Middlewares
-app.use(cors());
+app.use(cors()); 
+
 app.use(express.json()) //json parser
 app.use(morgan("dev"))
 
+//ROUTER
 app.use("/books", booksRouter)
 
 app.listen(PORT, ()=>console.log(`App is running on port ${PORT}`))

@@ -1,5 +1,8 @@
 import { Low, JSONFile } from 'lowdb';
 var adapter = new JSONFile('db.json');
-// Create new db
 var db = new Low(adapter);
-export default { db: db };
+//Set db
+db.data = db.data || {
+    books: [{ id: 'me', name: 'tim' }]
+};
+export default db;
