@@ -3,15 +3,15 @@ definition:
   info:
     title: Comic Books
     version: 1.0.0
-    description: SwaggerUi demo project
-    license:
-      name: MIT
+    description: This is a demo project to set up SwaggerUI
+  license:
+    name: MIT
 
   servers:
     - url: http://localhost:4000
       description: 'Development server'
     
-apis: ["/routes/*.js"]
+apis: ["./routes/*.js"]
 
 paths:
   /books:

@@ -1,6 +1,17 @@
 import express from "express";
 import db from "../db/db.js";
 var router = express.Router();
+/**
+ * @openapi
+ * components:
+ *  schemas:
+ *      Book:
+ *          type:
+ *          properties:
+ *              id:
+ *                  type: string
+ *                  title: string
+ */
 router.get("/", function (req, res) {
     var data = db.data;
     data === null || data === void 0 ? void 0 : data.books.push({ id: 'you', name: 'someoneElse' });
