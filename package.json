@@ -14,7 +14,8 @@
     "nanoid": "^3.1.30",
     "require": "^2.4.20",
     "swagger-jsdoc": "^6.1.0",
-    "swagger-ui-express": "^4.1.6"
+    "swagger-ui-express": "^4.1.6",
+    "yamljs": "^0.3.0"
   },
   "devDependencies": {
     "@types/express": "^4.17.13",
